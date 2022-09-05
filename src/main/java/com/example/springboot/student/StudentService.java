@@ -1,8 +1,11 @@
 package com.example.springboot.student;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class StudentService {
     public List<Student> GetStudent(){
         return List.of(new Student(
