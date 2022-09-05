@@ -1,0 +1,5 @@
+*.xml
+target/test-classes/com/example/springboot/ApplicationTests.class
+target/classes/com/example/springboot/Application.class
+target/classes/application.properties
+.idea/.gitignore
