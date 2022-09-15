@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      data-layout-decorate="~{_layout}"
+      >
+<head>
+  <title>Home</title>
+</head>
+<body>
+<div data-layout-fragment="content">
+  <h4 style="margin: 15px 0 5px 0">Students list:</h4>
+  <div class="table-container">
+    <div class="table">
+      <div class="table-header">
+        <div class="header__item"><a id="name" class="filter__link" href="#">Name</a></div>
+        <div class="header__item"><a id="mail" class="filter__link" href="#">Email</a></div>
+        <div class="header__item"><a id="dob" class="filter__link" href="#">DoB</a></div>
+        <div class="header__item">-</div>
+      </div>
+      <div class="table-content">
+        <div class="table-row" data-th-if="${students.empty}">
+          <div colspan="3"> No Students Available </div>
+        </div>
+        <div class="table-row" data-th-each="std : ${students}">
+          <div class="table-data"><span data-th-text="${std.name}" /></div>
+          <div class="table-data"><span data-th-text="${std.email}" /></div>
+          <div class="table-data"><span data-th-text="${std.dob}" /></div>
+          <div class="table-data"><a data-th-href="@{'/students/edit/{id}'(id=${std.id})}">edit</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

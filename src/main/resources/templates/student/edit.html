@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      data-layout-decorate="~{_layout}"
+>
+<head>
+  <title>Edit</title>
+</head>
+<body>
+<div data-layout-fragment="content">
+
+  <main>
+    <h1>Create user</h1>
+    <form data-th-object="${formData}"
+          data-th-action="@{'/students/edit/{id}'(id=${id})}"
+          method="post">
+
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" data-th-field="*{name}">
+        <p data-th-if="${#fields.hasErrors('name')}"
+           data-th-text="${#strings.listJoin(#fields.errors('name'), ', ')}"></p>
+      </div>
+
+      <div>
+        <label for="mail">Email</label>
+        <input id="mail" type="email" data-th-field="*{email}">
+        <p data-th-if="${#fields.hasErrors('email')}"
+           data-th-text="${#strings.listJoin(#fields.errors('email'), ', ')}"></p>
+      </div>
+
+      <div>
+        <label for="dob">Date of Bird</label>
+        <input id="dob" type="date" data-th-field="*{dob}">
+        <p data-th-if="${#fields.hasErrors('dob')}"
+           data-th-text="${#strings.listJoin(#fields.errors('dob'), ', ')}"></p>
+      </div>
+
+      <input type="submit" value="Modifica" />
+    </form>
+  </main>
+
+</div>
+</body>
+</html>

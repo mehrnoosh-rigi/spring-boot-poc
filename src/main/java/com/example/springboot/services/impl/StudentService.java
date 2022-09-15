@@ -88,4 +88,10 @@ public class StudentService implements IStudentService {
 
         studentRepository.deleteById(id);
     }
+
+    @Override
+    public Student findStudent(Long id) {
+        return studentRepository.findById(id)
+                .orElseThrow(() ->new IllegalStateException("User not founded"));
+    }
 }

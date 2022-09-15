@@ -4,10 +4,12 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+
 @Entity
-@Table
+@Table //@Table(name = "student")
 public class Student {
     @Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @SequenceGenerator(
             name = "student_sequence",
             sequenceName = "student_sequence",

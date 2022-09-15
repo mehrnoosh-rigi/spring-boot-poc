@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title data-layout-title-pattern="$CONTENT_TITLE | $DECORATOR_TITLE"></title>
+    <link rel="stylesheet" data-th-href="@{/styles/site/main.css}"/>
+</head>
+<body>
+    <nav class="topnav">
+        <a class="active" data-th-href="@{/students}">Home</a>
+        <a data-th-href="@{/students/create}">Create</a>
+        <a data-th-href="@{/greeting?usr=Giurbia&col=%23FF00FF}">Greeting</a>
+    </nav>
+    <div class="container">
+        <div class="inner-container" data-layout-fragment="content" />
+    </div>
+
+
+
+</body>
+</html>
